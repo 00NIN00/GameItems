@@ -3,7 +3,7 @@ using UnityEngine;
 namespace _Game.Scripts.Player
 {
     [RequireComponent(typeof(Character))]
-    public class PlayerInput : MonoBehaviour
+    public class PlayerInputMove : MonoBehaviour
     {
         private const string HorizontalAxisName = "Horizontal";
         private const string VerticalAxisName = "Vertical";
