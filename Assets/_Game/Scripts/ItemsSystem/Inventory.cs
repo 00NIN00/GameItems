@@ -3,21 +3,15 @@ using UnityEngine;
 
 namespace _Game.Scripts.ItemsSystem
 {
-    [RequireComponent(typeof(Data))]
     public class Inventory : MonoBehaviour
     {
-        [SerializeField] private Data _data;
+        [SerializeField] private GameObject _gameObject;
         [SerializeField] private Transform _itemPosition;
         
         private Item _item;
 
         private bool _useInput;
-
-        private void Awake()
-        {
-            _data = GetComponent<Data>();
-        }
-
+        
         public void SetInput(bool useInput)
         {
             _useInput = useInput;
@@ -49,7 +43,7 @@ namespace _Game.Scripts.ItemsSystem
 
         private void UseItem()
         {
-            _item.Use(_data);
+            _item.Use(_gameObject);
             _item.Destroy();
             
             _item = null;

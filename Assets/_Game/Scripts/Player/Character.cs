@@ -3,13 +3,14 @@ using UnityEngine;
 namespace _Game.Scripts.Player
 {
     [RequireComponent(typeof(CharacterController))]
-    [RequireComponent(typeof(Data))]
+    [RequireComponent(typeof(SpeedData))]
     public class Character : MonoBehaviour
     {
         private Vector3 _input;
         
-        private Data _data;
-        private float _speed => _data.Speed;
+        [SerializeField] private float _baseSpeed;
+        private SpeedData _speedData;
+        
         [SerializeField] private float _rotationSpeed;
         
         private MovementCharacter _movementCharacter;
@@ -17,7 +18,8 @@ namespace _Game.Scripts.Player
 
         private void Awake()
         {
-            _data = GetComponent<Data>();
+            _speedData = GetComponent<SpeedData>();
+            _speedData.Initialize(_baseSpeed);
             
             _movementCharacter = new MovementCharacter(GetComponent<CharacterController>());
             _rotationCharacter = new RotationCharacter(transform);
@@ -36,7 +38,7 @@ namespace _Game.Scripts.Player
 
         private void Move()
         {
-            _movementCharacter.MoveTo(_input, _speed);
+            _movementCharacter.MoveTo(_input, _speedData.Speed);
         }
 
         private void Rotate()

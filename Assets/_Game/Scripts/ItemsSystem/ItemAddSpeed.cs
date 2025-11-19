@@ -7,9 +7,19 @@ namespace _Game.Scripts.ItemsSystem
     {
         [SerializeField] private float _multiplier;
 
-        public override void Use(Data data)
+        public override void Use(GameObject gameObject)
         {
-            data.Speed *= _multiplier;
+            if (CanUse(gameObject))
+            {
+                gameObject.GetComponent<SpeedData>().AddSpeed(_multiplier);
+            }
+            
+            base.Use(gameObject);
+        }
+
+        public override bool CanUse(GameObject gameObject)
+        {
+            return gameObject.GetComponent<SpeedData>();
         }
     }
 }

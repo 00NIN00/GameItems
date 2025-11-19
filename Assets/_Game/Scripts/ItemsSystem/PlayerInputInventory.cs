@@ -6,7 +6,7 @@ namespace _Game.Scripts.ItemsSystem
     
     public class PlayerInputInventory : MonoBehaviour
     {
-        private const KeyCode UseItemKey = KeyCode.E;
+        private const KeyCode UseItemKey = KeyCode.F;
 
         private Inventory _inventory;
         private void Awake()
