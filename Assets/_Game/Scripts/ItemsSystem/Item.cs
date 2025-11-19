@@ -7,7 +7,7 @@ namespace _Game.Scripts.ItemsSystem
         [SerializeField] private ParticleSystem _particlePrefab;
         public virtual void Use(GameObject gameObject)
         {
-            ParticleSystem particleSystem = Instantiate(_particlePrefab, transform.position, Quaternion.identity);
+            ParticleSystem particleSystem = Instantiate(_particlePrefab, gameObject.transform);
             particleSystem.Play();
         }
 

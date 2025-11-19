@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb01e2ac53de4be185f3852cfdd82680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particlePrefab: {fileID: 6067314266832471834, guid: 498330284afaaf446bbe44d58713e66f,
+  _particlePrefab: {fileID: 1536979816860665779, guid: 848bbb4b34c55154492f98a8a8bb494e,
     type: 3}
   _bulletPrefab: {fileID: 1866083409545930464, guid: 72c20c779e663dc4f8a1f9e94523bc52,
     type: 3}

@@ -17,14 +17,16 @@ namespace _Game.Scripts.ItemsSystem
             _useInput = useInput;
         }
 
-        public void SetItem(Item item)
+        public bool TrySetItem(Item item)
         {
             if(item == _item || _item != null)
-                return;
+                return false;
             
             _item = item;
 
             SetPositionItem();
+            
+            return true;
         }
 
         private void SetPositionItem()
@@ -35,7 +37,7 @@ namespace _Game.Scripts.ItemsSystem
 
         private void Update()
         {
-            if (_item != null && _useInput)
+            if (_useInput)
             {
                 UseItem();
             }
@@ -43,6 +45,12 @@ namespace _Game.Scripts.ItemsSystem
 
         private void UseItem()
         {
+            if (_item == null)
+            {
+                Debug.Log("You don't have item");
+                return;
+            }
+
             _item.Use(_gameObject);
             _item.Destroy();
             

@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eac2da138ca4993a8f8cf110c272900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particlePrefab: {fileID: 6067314266832471834, guid: 498330284afaaf446bbe44d58713e66f,
+  _particlePrefab: {fileID: 6067314266832471834, guid: 0222af7756a064242b33632dc3bb3b7a,
     type: 3}
   _health: 10
 --- !u!1 &8792139489472173291

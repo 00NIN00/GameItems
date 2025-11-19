@@ -19,8 +19,8 @@ namespace _Game.Scripts.ItemsSystem
         {
             if (other.TryGetComponent(out Item item))
             {
-                _inventory.SetItem(item);
-                item.PickUp();
+                if (_inventory.TrySetItem(item))
+                    item.PickUp();
             }
         }
     }
