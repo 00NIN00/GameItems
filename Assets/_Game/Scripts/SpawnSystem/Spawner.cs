@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using _Game.Scripts.ItemsSystem;
 using UnityEngine;
 
-namespace _Game.Scripts
+namespace _Game.Scripts.SpawSystem
 {
     public class Spawner : MonoBehaviour
     {
@@ -34,22 +34,27 @@ namespace _Game.Scripts
 
             if (_timer >= _cooldown)
             {
-                List<SpawnPoint> emptySpawnPoints = GetEmptySpawnPoints();
-
-                if (emptySpawnPoints.Count == 0)
-                {
-                    _timer = 0;
-                    return;
-                }
-                
-                SpawnPoint spawnPoint = emptySpawnPoints[Random.Range(0, emptySpawnPoints.Count)];
-                
-                Item item = Instantiate(_items[Random.Range(0, _items.Length)], spawnPoint.Position, Quaternion.identity);
-                
-                spawnPoint.Occupy(item);
+                Spawn();
                 
                 _timer = 0;
             }
+        }
+
+        private void Spawn()
+        {
+            List<SpawnPoint> emptySpawnPoints = GetEmptySpawnPoints();
+
+            if (emptySpawnPoints.Count == 0)
+            {
+                _timer = 0;
+                return;
+            }
+                
+            SpawnPoint spawnPoint = emptySpawnPoints[Random.Range(0, emptySpawnPoints.Count)];
+                
+            Item item = Instantiate(_items[Random.Range(0, _items.Length)], spawnPoint.Position, Quaternion.identity);
+                
+            spawnPoint.Occupy(item);
         }
 
         private List<SpawnPoint> GetEmptySpawnPoints()
