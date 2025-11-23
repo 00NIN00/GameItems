@@ -11,7 +11,7 @@ namespace _Game.Scripts.ItemsSystem
         {
             if (CanUse(gameObject))
             {
-                gameObject.GetComponent<SpeedData>().AddSpeed(_multiplier);
+                gameObject.GetComponent<SpeedChanger>().AddSpeed(_multiplier);
             }
             
             base.Use(gameObject);
@@ -19,7 +19,7 @@ namespace _Game.Scripts.ItemsSystem
 
         public override bool CanUse(GameObject gameObject)
         {
-            return gameObject.GetComponent<SpeedData>();
+            return gameObject.GetComponent<SpeedChanger>();
         }
     }
 }

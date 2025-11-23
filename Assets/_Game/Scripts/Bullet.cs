@@ -7,11 +7,11 @@ namespace _Game.Scripts.ItemsSystem
     {
         private Rigidbody _rigidbody;
         [SerializeField] private float _force;
-        private void Awake()
+        public void Launch(float force, Vector3 direction)
         {
             _rigidbody = GetComponent<Rigidbody>();
             
-            _rigidbody.AddForce(transform.forward * _force, ForceMode.Impulse);
+            _rigidbody.AddForce(direction * force, ForceMode.Impulse);
         }
     }
 }

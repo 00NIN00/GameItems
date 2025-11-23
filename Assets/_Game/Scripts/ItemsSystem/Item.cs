@@ -5,6 +5,7 @@ namespace _Game.Scripts.ItemsSystem
     public abstract class Item : MonoBehaviour
     {
         [SerializeField] private ParticleSystem _particlePrefab;
+        
         public virtual void Use(GameObject gameObject)
         {
             ParticleSystem particleSystem = Instantiate(_particlePrefab, gameObject.transform);
@@ -17,6 +18,7 @@ namespace _Game.Scripts.ItemsSystem
         {
             GetComponentInChildren<AnimateRotation>().enabled = false;
         }
+        
         public void Destroy()
         {
            Destroy(gameObject);

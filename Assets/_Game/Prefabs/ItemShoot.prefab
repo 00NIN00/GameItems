@@ -170,4 +170,5 @@ MonoBehaviour:
     type: 3}
   _bulletPrefab: {fileID: 1866083409545930464, guid: 72c20c779e663dc4f8a1f9e94523bc52,
     type: 3}
-  _bulletLiveTime: 0
+  _bulletLiveTime: 4
+  _bulletForce: 8

@@ -3,10 +3,10 @@ using UnityEngine;
 namespace _Game.Scripts
 {
     [RequireComponent(typeof(HealthSystem))]
-    public class HealthData : MonoBehaviour
+    public class HealthChanger : MonoBehaviour
     {
         private float _health;
-        
+
         private int _maxHealth;
         
         public float Health => _health;
@@ -29,6 +29,8 @@ namespace _Game.Scripts
             {
                 _health = 0;
             }
+            
+            Debug.Log("Taking damage!" + "health = "+_health);
         }
 
         public void AddHealth(float heal)
@@ -42,6 +44,8 @@ namespace _Game.Scripts
             {
                 _health = _maxHealth;
             }
+            
+            Debug.Log("Add Health!" + "health = "+_health);
         }
     }
 }

@@ -2,21 +2,21 @@ using UnityEngine;
 
 namespace _Game.Scripts
 {
-    [RequireComponent(typeof(HealthData))]
+    [RequireComponent(typeof(HealthChanger))]
     public class HealthSystem : MonoBehaviour
     {
         
         [SerializeField] private int _baseMaxHealth;
         
-        private HealthData _healthData;
-        public bool IsAlive => _healthData.Health > 0;
+        private HealthChanger _healthChanger;
+        public bool IsAlive => _healthChanger.Health > 0;
 
         private void Awake()
         {
-            _healthData = GetComponent<HealthData>();
-            _healthData.Initialize(_baseMaxHealth);
+            _healthChanger = GetComponent<HealthChanger>();
+            _healthChanger.Initialize(_baseMaxHealth);
             
-            _healthData.TakeDamage(4);// for test
+            _healthChanger.TakeDamage(4);// for test
         }
     }
 }

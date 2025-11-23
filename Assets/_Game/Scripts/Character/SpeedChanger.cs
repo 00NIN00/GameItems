@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace _Game.Scripts
 {
-    public class SpeedData : MonoBehaviour
+    public class SpeedChanger : MonoBehaviour
     {
         private float _speed;
 

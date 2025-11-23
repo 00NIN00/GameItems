@@ -10,14 +10,14 @@ namespace _Game.Scripts.ItemsSystem
             if (CanUse(gameObject) != true)
                 return;
 
-            gameObject.GetComponent<HealthData>().AddHealth(_health);
+            gameObject.GetComponent<HealthChanger>().AddHealth(_health);
             
             base.Use(gameObject);
         }
 
         public override bool CanUse(GameObject gameObject)
         {
-            return gameObject.TryGetComponent(out HealthData _);
+            return gameObject.TryGetComponent(out HealthChanger _);
         }
     }
 }
